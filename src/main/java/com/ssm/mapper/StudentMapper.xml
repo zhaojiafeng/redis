@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.StudentMapper">
+
+
+    <cache type="com.ssm.reids.RedisCache"/>
+
+
+    <resultMap id="BaseResultMap" type="com.ssm.bean.Student">
+        <result column="_id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+
+    <select id="findAllStudent" resultMap="BaseResultMap">
+        SELECT *
+        FROM student
+    </select>
+
+
+</mapper>
